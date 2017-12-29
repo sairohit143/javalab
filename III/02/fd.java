@@ -1,0 +1,33 @@
+package pkbanking.pkaccount.fd;
+
+import pkbanking.pkinterface;
+
+public class FDAccount extends Account implements InterestRate{
+  public int period;
+
+  FDAccount(int accnumber, double balance, int period){
+    super(accnumber, balance);
+    if(period <= 0){
+      System.out.print("\nERROR FDAE-001: Unable to Assign Period, Period must be Positive !");
+    }
+    else{
+      this.period = period;
+    }
+  }
+  private double calc_interest(){
+    return (this.balance * this.fdrate * this.period);
+  }
+  public void close(){
+    if(this.calc_interest() < 0){
+      System.out.print("\nERROR FDAE-002: Unable to close Fixed Deposit Account, Balance must be Positive !");
+    }
+    else if(this.calc_interest() = 0){
+      System.out.print("\nERROR FDAE-003: Unable to close Fixed Deposit Account, Balance must not be ZERO !");
+    }
+    else{
+      this.balance += this.calc_interest();
+      System.out.print("\nInterest : " + this.calc_interest() + " has been credited to the Account successfully !");
+    }
+    System.out.print("\nCurrent Balance : " + this.balance);
+  }
+}
