@@ -72,6 +72,58 @@ public class Customer{
     longer[array.length] = pushedItem;
     return longer;
   }
+
+  //account type specific transaction methods :
+  private void SBAccount_transaction(int index){
+    Scanner in = new Scanner(System.in);
+    System.out.print("\nSavings Account Transaction Menu : \n1.Deposit.\n2.Withdraw.\n3.Calculate Interest.\nEnter your choice : ");
+    int choice = in.nextInt();
+    switch(choice){
+      case 1 :
+        System.out.print("\nCurrent Balance : " + this.savings[index].showBalance());
+        System.out.print("\nEnter Amount to Deposit into Account - " + this.savings[index].showAccountNumber() + " : ");
+        double depositAmount = in.nextDouble();
+        System.out.print("\nEnter 'Y' to confirm Withdrawal : ");
+        char confirm = in.nextChar();
+        if(confirm == 'Y' || confirm == 'y'){
+          this.savings[index].deposit(depositAmount);
+        }
+        else{
+          System.out.print("\nERROR 00CE-003: Unable to process deposit, Confirmation Ignored !");
+        }
+        break;
+      case 2 :
+        System.out.print("\nCurrent Balance : " + this.savings[index].showBalance());
+        System.out.print("\nEnter Amount to Withdraw from Account - " + this.savings[index].showAccountNumber() + " : ");
+        double withdrawAmount = in.nextDouble();
+        System.out.print("\nEnter 'Y' to confirm Withdrawal : ");
+        char confirm = in.nextChar();
+        if(confirm == 'Y' || confirm == 'y'){
+          this.savings[index].withdraw(withdrawAmount);
+        }
+        else{
+          System.out.print("\nERROR 00CE-004: Unable to process withdraw, Confirmation Ignored !");
+        }
+        break;
+      case 3 :
+        System.out.print("\nCurrent Balance : " + this.savings[index].showBalance());
+        System.out.print("\nEnter 'Y' to confirm Credit of Interest into Account - " + this.savings[index].showAccountNumber() + " : ");
+        char confirm = in.nextChar();
+        if(confirm == 'Y' || confirm == 'y'){
+          this.savings[index].calc_interest();
+        }
+        else{
+          System.out.print("\nERROR 00CE-005: Unable to credit interest, Confirmation Ignored !");
+        }
+        break;
+      default :
+        System.out.print("\nERROR 00CE-006: Unable to process transaction, Invalid Choice, Choice must be 1 (or) 2 (or) 3 !");
+    }
+  }
+  private void FDAccount_trnsaction(){
+    Scanner in = new Scanner(System.in);
+    System.out.print("\nFixed Deposit Account Transaction Menu : \n1.Close Fixed Deposit Account.\n2.Calculate Interest from the Account.\nEnter your choice : ");
+  }
 }
 
 // private static String[] push(String[] array, String push) {

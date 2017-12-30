@@ -13,4 +13,10 @@ public abstract class Account{
       this.balance = balance;
     }
   }
+  public double showBalance(){
+    return this.balance;
+  }
+  public int showAccountNumber(){
+    return this.accnumber; 
+  }
 }
