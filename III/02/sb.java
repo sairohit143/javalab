@@ -37,4 +37,7 @@ public class SBAccount extends Account implements Transaction, InterestRate{
     }
     System.out.print("\nCurrent Balance : " + this.balance);
   }
+  public void status(){
+    System.out.print("\nStatus of Account - " + this.accnumber + " : \nCurrent Balance : " + this.balance);
+  }
 }

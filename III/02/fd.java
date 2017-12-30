@@ -4,6 +4,7 @@ import pkbanking.pkinterface;
 
 public class FDAccount extends Account implements InterestRate{
   public int period;
+  boolean isClosed = false;
 
   FDAccount(int accnumber, double balance, int period){
     super(accnumber, balance);
@@ -27,7 +28,17 @@ public class FDAccount extends Account implements InterestRate{
     else{
       this.balance += this.calc_interest();
       System.out.print("\nInterest : " + this.calc_interest() + " has been credited to the Account successfully !");
+      this.isClosed = true;
     }
     System.out.print("\nCurrent Balance : " + this.balance);
+  }
+  public void status(){
+    System.out.print("\nStatus of Account - " + this.accnumber + " : \nCurrent Balance : " + this.balance + "\nPeriod : " + this.period);
+    if(this.isClosed){
+      System.out.print("\nClosed : Yes");
+    }
+    else{
+      System.out.print("\nClosed : No");
+    }
   }
 }
