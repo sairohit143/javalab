@@ -1,6 +1,8 @@
 package pkbanking.pkcustomer;
 
-import pkbanking.pkaccount.*;
+import pkbanking.pkaccount.sb.*;
+import pkbanking.pkaccount.fd.*;
+import java.util.*;
 
 public class Customer{
   int cust_id;
@@ -148,13 +150,14 @@ public class Customer{
     Scanner in = new Scanner(System.in);
     System.out.print("\nSavings Account Transaction Menu : \n1.Deposit.\n2.Withdraw.\n3.Calculate Interest.\nEnter your choice : ");
     int choice = in.nextInt();
+    char confirm;
     switch(choice){
       case 1 :
         System.out.print("\nCurrent Balance : " + this.savings[index].showBalance());
         System.out.print("\nEnter Amount to Deposit into Account - " + this.savings[index].showAccountNumber() + " : ");
         double depositAmount = in.nextDouble();
         System.out.print("\nEnter 'Y' to confirm Withdrawal : ");
-        char confirm = in.nextChar();
+        confirm = in.next().charAt(0);
         if(confirm == 'Y' || confirm == 'y'){
           this.savings[index].deposit(depositAmount);
         }
@@ -167,7 +170,7 @@ public class Customer{
         System.out.print("\nEnter Amount to Withdraw from Account - " + this.savings[index].showAccountNumber() + " : ");
         double withdrawAmount = in.nextDouble();
         System.out.print("\nEnter 'Y' to confirm Withdrawal : ");
-        char confirm = in.nextChar();
+        confirm = in.next().charAt(0);
         if(confirm == 'Y' || confirm == 'y'){
           this.savings[index].withdraw(withdrawAmount);
         }
@@ -178,7 +181,7 @@ public class Customer{
       case 3 :
         System.out.print("\nCurrent Balance : " + this.savings[index].showBalance());
         System.out.print("\nEnter 'Y' to confirm Credit of Interest into Account - " + this.savings[index].showAccountNumber() + " : ");
-        char confirm = in.nextChar();
+        confirm = in.next().charAt(0);
         if(confirm == 'Y' || confirm == 'y'){
           this.savings[index].calc_interest();
         }
@@ -197,8 +200,8 @@ public class Customer{
     switch(choice){
       case 1 :
         System.out.print("\nCurrent Balance : " + this.deposits[index].showBalance());
-        System.out.print("\nEnter 'Y' to close Fixed Deposit Account - " + this.deposits[index].close() + " : ");
-        char confirm = in.nextChar();
+        System.out.print("\nEnter 'Y' to close Fixed Deposit Account - " + this.deposits[index].showAccountNumber() + " : ");
+        char confirm = in.next().charAt(0);
         if(confirm == 'Y' || confirm == 'y'){
           this.deposits[index].close();
         }
@@ -208,7 +211,8 @@ public class Customer{
         break;
       case 2 :
         System.out.print("\nCurrent Balance : " + this.deposits[index].showBalance());
-        System.out.print("\nInterest for the Account - " + this.deposits[index].calc_interest() + " : ");
+        System.out.print("\nInterest for the Account - " + this.deposits[index].showAccountNumber() + " : ");
+        this.deposits[index].calc_interest();
         break;
       default :
         System.out.print("\nERROR 00CE-008: Unable to process transaction, Invalid Choice, Choice must be 1 (or) 2 !");
