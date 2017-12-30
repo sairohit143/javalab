@@ -11,7 +11,7 @@ public class Customer{
   SBAccount[] savings;        //create a dynamic array of objects
   FDAccount[] deposits;       //create a dynamic array of objects
 
-  Customer(int cust_id, String name, String address){
+  public Customer(int cust_id, String name, String address){
     this.cust_id = cust_id;
     this.name = name;
     this.address = address;
