@@ -19,7 +19,7 @@ public class Customer{
     Scanner in = new Scanner(System.in);
     if(type == 1){
       System.out.print("\nEnter Account Number : ");
-			int accnumber = in.nextInt();
+	    int accnumber = in.nextInt();
 			System.out.print("\nEnter Opening Balance for the Savings Account : ");
 			double balance = in.nextDouble();
       SBAccount temp = new SBAccount(accnumber, balance);                  //devise a method to push the new object into the dynamic array of objects.
