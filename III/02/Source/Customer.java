@@ -1,6 +1,5 @@
 package pkbanking;
 
-
 import java.util.*;
 
 public class Customer{
@@ -19,21 +18,21 @@ public class Customer{
     Scanner in = new Scanner(System.in);
     if(type == 1){
       System.out.print("\nEnter Account Number : ");
-	    int accnumber = in.nextInt();
-			System.out.print("\nEnter Opening Balance for the Savings Account : ");
-			double balance = in.nextDouble();
+      int accnumber = in.nextInt();
+      System.out.print("\nEnter Opening Balance for the Savings Account : ");
+      double balance = in.nextDouble();
       SBAccount temp = new SBAccount(accnumber, balance);                  //devise a method to push the new object into the dynamic array of objects.
       this.savings = push(this.savings, temp);
     }
     if(type == 2){
-			System.out.print("\nEnter Account Number : ");
-			int accnumber = in.nextInt();
-			System.out.print("\nEnter Period : ");
-			int period = in.nextInt();
-			System.out.print("\nEnter Deposit Amount for the Fixed Deposit Account : ");
-			double depositAmount = in.nextDouble();
-			FDAccount temp = new FDAccount(accnumber, depositAmount, period);    //devise a method to push the new object into the dynamic array of objects.
-			this.deposits = push(this.deposits, temp);
+      System.out.print("\nEnter Account Number : ");
+      int accnumber = in.nextInt();
+      System.out.print("\nEnter Period : ");
+      int period = in.nextInt();
+      System.out.print("\nEnter Deposit Amount for the Fixed Deposit Account : ");
+      double depositAmount = in.nextDouble();
+      FDAccount temp = new FDAccount(accnumber, depositAmount, period);    //devise a method to push the new object into the dynamic array of objects.
+      this.deposits = push(this.deposits, temp);
     }
     else{
       System.out.print("\nERROR 00CE-001: Unable to create Account, type must be either Savings or Fixed Deposit !");
