@@ -7,8 +7,8 @@ public class Customer{
   int cust_id;
   String name;
   String address;
-  SBAccount[] savings;        //create a dynamic array of objects
-  FDAccount[] deposits;       //create a dynamic array of objects
+  SBAccount savings[];        //create a dynamic array of objects
+  FDAccount deposits[];       //create a dynamic array of objects
 
   public Customer(int cust_id, String name, String address){
     this.cust_id = cust_id;
