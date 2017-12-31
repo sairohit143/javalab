@@ -1,4 +1,4 @@
-package pkbanking.pkinterface;
+package pkbanking;
 
 public interface InterestRate{
   public final double sbrate = 0.04;

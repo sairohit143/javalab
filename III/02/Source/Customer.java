@@ -1,7 +1,6 @@
-package pkbanking.pkcustomer;
+package pkbanking;
 
-import pkbanking.pkaccount.sb.*;
-import pkbanking.pkaccount.fd.*;
+
 import java.util.*;
 
 public class Customer{

@@ -1,7 +1,5 @@
-package pkbanking.pkaccount.fd;
+package pkbanking;
 
-import pkbanking.pkinterface.*;
-import pkbanking.pkaccount.*;
 
 public class FDAccount extends Account implements InterestRate{
   public int period;

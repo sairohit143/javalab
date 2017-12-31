@@ -1,4 +1,4 @@
-package pkbanking.pkaccount;
+package pkbanking;
 
 public abstract class Account{
   protected int accnumber;
