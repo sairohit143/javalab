@@ -26,14 +26,14 @@ public class Customer{
       this.savings = push(this.savings, temp);
     }
     if(type == 2){
-      System.out.print("\nEnter Account Number : ");
+			System.out.print("\nEnter Account Number : ");
 			int accnumber = in.nextInt();
 			System.out.print("\nEnter Period : ");
 			int period = in.nextInt();
 			System.out.print("\nEnter Deposit Amount for the Fixed Deposit Account : ");
 			double depositAmount = in.nextDouble();
-      FDAccount temp = new FDAccount(accnumber, depositAmount, period);    //devise a method to push the new object into the dynamic array of objects.
-      this.deposits = push(this.deposits, temp);
+			FDAccount temp = new FDAccount(accnumber, depositAmount, period);    //devise a method to push the new object into the dynamic array of objects.
+			this.deposits = push(this.deposits, temp);
     }
     else{
       System.out.print("\nERROR 00CE-001: Unable to create Account, type must be either Savings or Fixed Deposit !");
