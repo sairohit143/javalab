@@ -6,8 +6,8 @@ public class Customer{
   int cust_id;
   String name;
   String address;
-  SBAccount savings[];        //create a dynamic array of objects
-  FDAccount deposits[];       //create a dynamic array of objects
+  SBAccount savings[] = new SBAccount[0];        //create a dynamic array of objects
+  FDAccount deposits[] = new FDAccount[0];       //create a dynamic array of objects
 
   public Customer(int cust_id, String name, String address){
     this.cust_id = cust_id;
@@ -24,7 +24,7 @@ public class Customer{
       SBAccount temp = new SBAccount(accnumber, balance);                  //devise a method to push the new object into the dynamic array of objects.
       this.savings = push(this.savings, temp);
     }
-    if(type == 2){
+    else if(type == 2){
       System.out.print("\nEnter Account Number : ");
       int accnumber = in.nextInt();
       System.out.print("\nEnter Period : ");
