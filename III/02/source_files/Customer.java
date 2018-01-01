@@ -1,6 +1,8 @@
 package pkbanking.pkcustomer;
 
 import java.util.*;
+import pkbanking.pkaccount.sb.*;
+import pkbanking.pkaccount.fd.*;
 
 public class Customer{
   int cust_id;

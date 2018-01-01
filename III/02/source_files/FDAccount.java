@@ -1,5 +1,8 @@
 package pkbanking.pkaccount.fd;
 
+import pkbanking.pkinterface.*;
+import pkbanking.pkaccount.*;
+
 public class FDAccount extends Account implements InterestRate{
   public int period;
   public boolean isClosed = false;
