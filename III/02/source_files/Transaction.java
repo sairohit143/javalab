@@ -1,4 +1,4 @@
-package pkbanking;
+package pkbanking.pkinterface;
 
 public interface Transaction{
   public final double min_balance = 500;
