@@ -1,6 +1,4 @@
-package pkbanking;
-
-
+package pkbanking.pkaccount.sb;
 
 public class SBAccount extends Account implements Transaction, InterestRate{
   public SBAccount(int accnumber, double balance){

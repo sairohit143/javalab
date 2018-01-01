@@ -1,4 +1,4 @@
-package pkbanking;
+package pkbanking.pkcustomer;
 
 import java.util.*;
 
