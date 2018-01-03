@@ -11,7 +11,7 @@ public class ExceptionHandlingDemo{
     char operator = '.';
 
     //try-catch-finally statements
-    try{
+    try{                                           //try block
       //Instantiation of Scanner object :
       Scanner in = new Scanner(System.in);
 
@@ -21,20 +21,26 @@ public class ExceptionHandlingDemo{
       if(!((operand1 >= 10000) && (operand1 <= 50000))){
         throw new OperationFailedException("Bad Operand", new BadOperandException(operand1, 10000, 50000));
       }
-      System.out.print("\nEnter Operator : ");
+
+      //Input for the operator :
+      System.out.print("Enter Operator : ");
       operator = in.next().charAt(0);
       if(!((operator == '+') || ( operator == '-') || ( operator == '*') || ( operator == '/'))){
         throw new OperationFailedException("Bad Operator", new BadOperatorException( operator));
       }
-      System.out.print("\nEnter Operand 2 : ");
+
+      //Input for operand2 :
+      System.out.print("Enter Operand 2 : ");
        operand2 = in.nextInt();
       if(!(( operand2 >= 500) && ( operand2 <= 5000))){
         throw new OperationFailedException("Bad Operand", new BadOperandException( operand2, 500, 5000));
       }
-      System.out.print("\nResult : " + calculate( operand1,  operand2,  operator) + ".\n");
+
+      //Result Display is no exception is thrown :
+      System.out.print("\nResult : " + calculate( operand1,  operand2,  operator) + ".\n\n");
     }
-    catch(OperationFailedException failed){
-      System.out.print(failed.getCause());
+    catch(OperationFailedException failed){        //catch block
+      System.out.print(failed.getCause());         //printing the cause and exception handling statements for the thrown exception, by getCause()
     }
   }
 

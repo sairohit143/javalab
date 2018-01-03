@@ -6,7 +6,7 @@ javac ./source_files/BadOperatorException.java -d ./
 javac ./source_files/OperationFailedException.java -d ./
 
 #compilation of the ExceptionHandlingDemo source file which contains the main method.
-javac ./ExceptionHandlingDemo.java -d ./
+javac ./source_files/ExceptionHandlingDemo.java -d ./
 
 #notifying the end user that the compilation is over.
 echo "compilation of source files completed ..."
