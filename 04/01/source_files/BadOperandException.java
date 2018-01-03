@@ -19,9 +19,6 @@ public class BadOperandException extends Exception{
     this.operand = operand;
     this.startlimit = startlimit;
     this.endlimit = endlimit;
-
-    //Printing Exception by calling toString() :
-    System.out.print(this.toString());
   }
 
   //toString() function to print the exception description :

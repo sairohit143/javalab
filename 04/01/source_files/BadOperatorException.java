@@ -13,13 +13,10 @@ public class BadOperatorException extends Exception{
   public BadOperatorException(char operator){
     //Assigning values to the local Operator variable :
     this.operator = operator;
-
-    //Printing Exception by calling toString() :
-    System.out.print(this.toString());
   }
 
   //toString() function to print the exception description :
   public String toString(){
-    return ("ERROR EH002-BOR: Operator - " + this.operator + " is not one of { + , - , * , / }");
+    return ("\nERROR EH002-BOR: Operator - " + this.operator + " is not one of { + , - , * , / }");
   }
 }
