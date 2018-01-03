@@ -17,12 +17,12 @@ public class OperationFailedException extends Exception{
   //Constructor for OperationFailedException :
   public OperationFailedException(String str, Throwable thrown){
     this.description = str;
-    this.toString();
+    System.out.print(this.toString());
     this.initCause(thrown);
   }
 
   //toString() for printing Exception :
   public String toString(){
-    System.out.print("\nException Encountered : " + "\nRoot Cause : " + this.description);
+    return ("\nException Encountered : " + "\nRoot Cause : " + this.description);
   }
 }
