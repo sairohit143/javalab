@@ -1,16 +1,28 @@
+//Including this file under the package exception_handling :
 package exception_handling;
+
+//importing io for exception handling :
 import java.io.*;
 
-public class OperationFailedException extends Exception, BadOperandException, BadOperatorException{
-  public String des;
+//Operation Failed Exception for handling Operation Failure encompassing both { BadOperandException, BadOperatorException } :
+public class OperationFailedException extends Exception{
+  //local description string :
+  private String description;
 
+  //Constructor for OperationFailedException :
   public OperationFailedException(String str){
-
+    this.description = str;
   }
-  public OperationFailedException(String str, Throwable throw){
 
+  //Constructor for OperationFailedException :
+  public OperationFailedException(String str, Throwable thrown){
+    this.description = str;
+    this.toString();
+    this.initCause(thrown);
   }
+
+  //toString() for printing Exception :
   public String toString(){
-
+    System.out.print("\nException Encountered : " + "\nRoot Cause : " + this.description);
   }
 }
