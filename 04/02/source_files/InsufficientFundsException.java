@@ -1,18 +1,27 @@
+//initializing package pkbanking.pkexception and nesting exception class InsufficientFundsException in it :
 package pkbanking.pkexception;
-class InsufficientFundsException extends Exception {
-  String named;
-  public InsufficientFundsException(String a){
-    named = a;
-  }
+
+//importing java.io.* for exceptions :
+import java.io.*;
+
+//class InsufficientFundsException definition :
+public class InsufficientFundsException extends Exception {
+	//description of Exception :
+	String named;
+
+	//Default Constructor for Exception InsufficientFundsException :
 	public InsufficientFundsException(){
-		named = new String("Insufficient funds for operation !");
+		named = new String("Insufficient funds for Transaction !");
 	}
 
-  public String getCause(){
-    return named;
+	//Constructor for Exception InsufficientFundsException :
+	public InsufficientFundsException(String a){
+    named = a;
   }
 
+	//toString() :: Exception method Overriding :
 	public String toString(){
 		return ("ERROR IFE-001: " + this.named);
 	}
 }
+//class InsufficientFundsException end ...

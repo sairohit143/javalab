@@ -4,13 +4,13 @@ class Book{
 	String BKName;
 	int BKId;
 	String BKAuthor;
-	
+
 	Book(String name, int id, String author){
 		BKName = name;
 		BKId = id;
 		BKAuthor = author;
 	}
-	
+
 	void BKUpdateDetails(String name, int id, String author){
 		BKName = name;
 		BKId = id;

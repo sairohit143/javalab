@@ -40,12 +40,12 @@ public class PointDemo{
 		Point p1 = new Point(3.25, 7.89);
 		Point p2 = new Point(5.37, 18.12);
 		Point p3 = new Point(p2);
-		
+
 		double d1, d2;
-		
+
 		d1 = p1.find_distance(7.9, 16.25);
 		d2 = p1.find_distance(p3);
-		
+
 		System.out.print("\nDistance Between p1 & (7.9, 16.25) : " + d1 + "\nDistance Between p1 & p3 : " +  d2);
 	}
 }
