@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #compilation of auxillary source files from the ./source_files subdirectory.
-javac ./source_files/Transaction.java -d ./class
+javac ./source_files/Transaction.java -d ./
 javac ./source_files/InterestRate.java -d ./
 javac ./source_files/Account.java -d ./
 javac ./source_files/SBAccount.java -d ./
