@@ -137,8 +137,8 @@ class Customer{
 
 public class BankDemo{
 	public static void main(String[] args){
-		Customer c1 = new Customer(001, "Aravind M", "Trichy");
-		Customer c2 = new Customer(002, "Jaikanth J", "Trichy");
+		Customer c1 = new Customer(001, "Aravind M", "none");
+		Customer c2 = new Customer(002, "Jaikanth J", "none");
 		c1.transaction();
 		c2.transaction();
 		System.out.print("\nNumber of Accounts : " + Account.count);
