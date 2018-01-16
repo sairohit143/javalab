@@ -142,10 +142,10 @@ public class BankDemo{
 			System.out.print("\nEnter Customer ID : ");
 			int tempCustId = in.nextInt();
 			System.out.print("\nEnter Customer Name : ");
-			String tempName = in.nextLine();
+			String tempName = in.next();
 			System.out.print("\nEnter Customer Address : ");
-			String tempAddress = in.nextLine();
-			System.out.print("\nEnter Customer Account Type : ");
+			String tempAddress = in.next();
+			System.out.print("\nEnter Customer Account Type ( 1 => Savings Account, 2=> Fixed Deposit Account ) : ");
 			int tempType = in.nextInt();
 			c[i] = new Customer(tempCustId, tempName, tempAddress, tempType);
 		}
@@ -155,8 +155,5 @@ public class BankDemo{
 			c[i].transaction();
 		}
 		System.out.print("\nNumber of Accounts : " + Account.count);
-		//System.out.print("\nNumber of Account Numbers Created : " + )
-		//need a method to count number of accounts created by customer class objects.
-		//base class instantiation required
 	}
 }
