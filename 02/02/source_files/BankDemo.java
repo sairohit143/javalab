@@ -7,7 +7,7 @@ class Account{
 	protected double balance;
 	public static int count = 0;
 
-	Account(int acno, double bal){
+	public Account(int acno, double bal){
 		this.accnumber = acno;
 		this.balance = bal;
 		this.count++;
@@ -15,16 +15,16 @@ class Account{
 }
 
 class SBAccount extends Account{
-	SBAccount(int acc, double bal){
+	public SBAccount(int acc, double bal){
 		super(acc, bal);
 	}
-	void deposit(double depositAmount){
+	public void deposit(double depositAmount){
 		if(depositAmount >= 0){
 			this.balance += depositAmount;
 			System.out.print("\nDeposit Amount : " + depositAmount + " has been deposited in the Account Number : " + this.accnumber);
 		}
 	}
-	void withdraw(double withdrawAmount){
+	public void withdraw(double withdrawAmount){
 		if((this.balance - withdrawAmount) >= 1000){
 			this.balance -= withdrawAmount;
 			System.out.print("\nWithdraw Amount : " + withdrawAmount + " has been withdrawn from the Account Number : " + this.accnumber);
@@ -33,47 +33,44 @@ class SBAccount extends Account{
 			System.out.print("\nERROR : Insufficient Minimum Balance !");
 		}
 	}
-	void calc_interest(){
+	public void calc_interest(){
 		this.balance += (this.balance * 0.04);
 	}
 }
 
 class FDAccount extends Account{
-	int period;
+	public int period;
 
-	FDAccount(int acc, int per, double deposit){
+	public FDAccount(int acc, int per, double deposit){
 		super(acc, deposit);
 		this.period = per;
 	}
-	double calc_interest(){
+	public double calc_interest(){
 		double interest = balance * 0.0825 * period;
 		return interest;
 	}
-	void close(){
+	public void close(){
 		System.out.print("\nInterest for " + this.balance + " for " + this.period + " is : " + this.calc_interest());
 		this.balance += this.calc_interest();
 	}
 }
 
 class Customer{
-	int cust_id;
-	String name;
-	String address;
-	SBAccount savingsAccount;
-	FDAccount fixedDeposit;
-	int type;
+	public int cust_id;
+	public String name;
+	public String address;
+	public SBAccount savingsAccount;
+	public FDAccount fixedDeposit;
+	public int type;
 
-	Customer(int cid, String cname, String addr){
+	public Customer(int cid, String cname, String addr, int type){
 		this.cust_id = cid;
 		this.name = cname;
 		this.address = addr;
-		Scanner in = new Scanner(System.in);
-		int typ = in.nextInt();
-		this.createAccount(typ);
-		this.type = typ;
-	}
-	void createAccount(int type){
 		this.type = type;
+		this.createAccount();
+	}
+	public void createAccount(){
 		Scanner in = new Scanner(System.in);
 		if(this.type == 1){
 			System.out.print("\nEnter Account Number : ");
@@ -92,7 +89,7 @@ class Customer{
 			this.fixedDeposit = new FDAccount(accnum, per, depositamt);
 		}
 	}
-	void transaction(){
+	public void transaction(){
 		if(this.type == 1){
 			System.out.print("\nChoose Transaction : \n1.Withdraw\n2.Deposit\n3.Calculate Interest\nEnter : ");
 			Scanner in = new Scanner(System.in);
@@ -123,7 +120,7 @@ class Customer{
 			this.accountStatus(2);
 		}
 	}
-	void accountStatus(int choice){
+	public void accountStatus(int choice){
 		if(choice == 1){
 			System.out.print("\nSAVINGS ACCOUNT STATUS\n------- ------- ------");
 			System.out.print("\nSavings Account Number : " + this.savingsAccount.accnumber + "\nCustomer ID : " + this.cust_id + "\nCustomer Name : " + this.name + "\nCustomer Address : " + this.address + "\nSavings Account Balance : " + this.savingsAccount.balance);
@@ -137,10 +134,26 @@ class Customer{
 
 public class BankDemo{
 	public static void main(String[] args){
-		Customer c1 = new Customer(001, "Aravind M", "none");
-		Customer c2 = new Customer(002, "Jaikanth J", "none");
-		c1.transaction();
-		c2.transaction();
+		Customer c[] = new Customer[5];
+		//Input Details
+		for(int i = 0; i < 5; i++){
+			Scanner in = new Scanner(System.in);
+			System.out.print("\nDetails of Customer ( " + (i+1) + " ) : " + "\n------- -- -------- ");
+			System.out.print("\nEnter Customer ID : ");
+			int tempCustId = in.nextInt();
+			System.out.print("\nEnter Customer Name : ");
+			String tempName = in.nextLine();
+			System.out.print("\nEnter Customer Address : ");
+			String tempAddress = in.nextLine();
+			System.out.print("\nEnter Customer Account Type : ");
+			int tempType = in.nextInt();
+			c[i] = new Customer(tempCustId, tempName, tempAddress, tempType);
+		}
+		//Transaction for Customers Account
+		for(int i = 0; i < 5; i++){
+			System.out.print("\nTransaction for Customer ( " + (i+1) + " ) : " + "\n----------- --- --------");
+			c[i].transaction();
+		}
 		System.out.print("\nNumber of Accounts : " + Account.count);
 		//System.out.print("\nNumber of Account Numbers Created : " + )
 		//need a method to count number of accounts created by customer class objects.
