@@ -7,11 +7,11 @@ import java.io.*;
 //class InsufficientFundsException definition :
 public class InsufficientFundsException extends Exception {
 	//description of Exception :
-	String named;
+	public String named;
 
 	//Default Constructor for Exception InsufficientFundsException :
 	public InsufficientFundsException(){
-		named = new String("Insufficient funds for Transaction !");
+		this.named = new String("Insufficient funds for Transaction !");
 	}
 
 	//Constructor for Exception InsufficientFundsException :
