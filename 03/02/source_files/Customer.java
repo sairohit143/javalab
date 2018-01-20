@@ -50,27 +50,27 @@ public class Customer{
       //include a search function of SBAccount type,
       //to search for the account number in the program,
       //to identify the object with which the transaction must be done.
-      int index = search(this.savings, account);
+      int index = this.search(this.savings, account);
       if(index != -1){
         this.SBAccount_transaction(index);
         //function to output status of the object.
-        this.savings[index].status();
+        //this.savings[index].status();
       }
       else{
         System.out.print("\nERROR 00CE-009: Unable to process transaction, Savings Accounts with this Account Number doesn't Exist !");
       }
     }
-    if(type == 2){
+    else if(type == 2){
       System.out.print("\nEnter the Account Number to do transaction with : ");
       int account = in.nextInt();
       //include a search function of FDAccount type,
       //to search for the account number in the program,
       //to identify the object with which the transaction must be done.
-      int index = search(this.deposits, account);
+      int index = this.search(this.deposits, account);
       if(index != -1){
         this.FDAccount_transaction(index);
         //function to output status of the object.
-        this.deposits[index].status();
+        //this.deposits[index].status();
       }
       else{
         System.out.print("\nERROR 00CE-010: Unable to process transaction, Fixed Deposit Accounts with this Account Number doesn't Exist !");
@@ -158,7 +158,7 @@ public class Customer{
         System.out.print("\nCurrent Balance : " + this.savings[index].showBalance());
         System.out.print("\nEnter Amount to Deposit into Account - " + this.savings[index].showAccountNumber() + " : ");
         double depositAmount = in.nextDouble();
-        System.out.print("\nEnter 'Y' to confirm Withdrawal : ");
+        System.out.print("\nEnter 'Y' to confirm Deposit : ");
         confirm = in.next().charAt(0);
         if(confirm == 'Y' || confirm == 'y'){
           this.savings[index].deposit(depositAmount);
