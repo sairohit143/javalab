@@ -10,7 +10,6 @@ public class Customer{
   String address;
 	SBAccount savings[] = new SBAccount[0];
 	FDAccount deposits[] = new FDAccount[0];
-
   public Customer(int cust_id, String name, String address){
     this.cust_id = cust_id;
     this.name = name;

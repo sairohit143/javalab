@@ -6,9 +6,8 @@ import pkbanking.pkaccount.*;
 public class FDAccount extends Account implements InterestRate{
   public int period;
   public boolean isClosed = false;
-
-  public FDAccount(int accnumber, double balance, int period){
-    super(accnumber, balance);
+  public FDAccount(int accountNumber, double balance, int period){
+    super(accountNumber, balance);
     if(period <= 0){
       System.out.print("\nERROR FDAE-001: Unable to Assign Period, Period must be Positive !");
     }
@@ -34,7 +33,7 @@ public class FDAccount extends Account implements InterestRate{
     System.out.print("\nCurrent Balance : " + this.balance);
   }
   public void status(){
-    System.out.print("\nStatus of Account - " + this.accnumber + " : \nCurrent Balance : " + this.balance + "\nPeriod : " + this.period);
+    System.out.print("\nStatus of Account - " + this.accountNumber + " : \nCurrent Balance : " + this.balance + "\nPeriod : " + this.period);
     if(this.isClosed){
       System.out.print("\nClosed : Yes");
     }

@@ -15,5 +15,3 @@ public class BankDemo{
 		}
   }
 }
-
-//previously as in ~/03/02/source_files/BankDemo.java
