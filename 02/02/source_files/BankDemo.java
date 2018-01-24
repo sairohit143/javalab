@@ -127,7 +127,7 @@ class Customer{
 		}
 		if(choice == 2){
 			System.out.print("\nFIXED DEPOSIT STATUS\n----- ------- ------");
-			System.out.print("\nFixed Deposit Account Number : " + this.fixedDeposit.accnumber + "\nCustomer ID : " + this.cust_id + "\nCustomer Name : " + this.name + "\nCustomer Address : " + this.address + "\nSavings Account Balance : " + this.fixedDeposit.balance + "\nPeriod : " + this.fixedDeposit.period);
+			System.out.print("\nFixed Deposit Account Number : " + this.fixedDeposit.accnumber + "\nCustomer ID : " + this.cust_id + "\nCustomer Name : " + this.name + "\nCustomer Address : " + this.address + "\nFixed Deposit Account Balance : " + this.fixedDeposit.balance + "\nPeriod : " + this.fixedDeposit.period);
 		}
 	}
 }
