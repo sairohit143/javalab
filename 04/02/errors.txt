@@ -1,0 +1,183 @@
+${machine}:02 ${user}$ sh compile_script.sh
+./source_files/Transaction.java:5: error: package pkbanking.pkexception does not exist
+import pkbanking.pkexception.*;
+^
+./source_files/Transaction.java:16: error: cannot find symbol
+  public void withdraw(double withdrawAmount)throws InsufficientFundsException;
+                                                    ^
+  symbol:   class InsufficientFundsException
+  location: interface Transaction
+2 errors
+./source_files/SBAccount.java:13: error: ';' expected
+			throw new IllegalArgumentException("ERROR SBAE-001: Unable to Process Deposit, Deposit Amount should be Positive !")
+			                                                                                                                    ^
+1 error
+./source_files/FDAccount.java:3: error: package pkbanking.pkinterface does not exist
+import pkbanking.pkinterface.*;
+^
+./source_files/FDAccount.java:6: error: cannot find symbol
+public class FDAccount extends Account implements InterestRate{
+                               ^
+  symbol: class Account
+./source_files/FDAccount.java:6: error: cannot find symbol
+public class FDAccount extends Account implements InterestRate{
+                                                  ^
+  symbol: class InterestRate
+./source_files/FDAccount.java:20: error: cannot find symbol
+    return (this.balance * this.fdrate * this.period);
+                ^
+  symbol: variable balance
+./source_files/FDAccount.java:20: error: cannot find symbol
+    return (this.balance * this.fdrate * this.period);
+                               ^
+  symbol: variable fdrate
+./source_files/FDAccount.java:30: error: cannot find symbol
+      this.balance += this.calc_interest();
+          ^
+  symbol: variable balance
+./source_files/FDAccount.java:34: error: cannot find symbol
+    System.out.print("\nCurrent Balance : " + this.balance);
+                                                  ^
+  symbol: variable balance
+./source_files/FDAccount.java:37: error: cannot find symbol
+    System.out.print("\nStatus of Account - " + this.accnumber + " : \nCurrent Balance : " + this.balance + "\nPeriod : " + this.period);
+                                                    ^
+  symbol: variable accnumber
+./source_files/FDAccount.java:37: error: cannot find symbol
+    System.out.print("\nStatus of Account - " + this.accnumber + " : \nCurrent Balance : " + this.balance + "\nPeriod : " + this.period);
+                                                                                                 ^
+  symbol: variable balance
+9 errors
+./source_files/Customer.java:4: error: package pkbanking.pkaccount.sb does not exist
+import pkbanking.pkaccount.sb.*;
+^
+./source_files/Customer.java:5: error: package pkbanking.pkaccount.fd does not exist
+import pkbanking.pkaccount.fd.*;
+^
+./source_files/Customer.java:11: error: cannot find symbol
+  SBAccount savings[] = new SBAccount[0];        //create a dynamic array of objects
+  ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:12: error: cannot find symbol
+  FDAccount deposits[] = new FDAccount[0];       //create a dynamic array of objects
+  ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:99: error: cannot find symbol
+  private static SBAccount[] push(SBAccount array[], SBAccount pushedItem){
+                                  ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:99: error: cannot find symbol
+  private static SBAccount[] push(SBAccount array[], SBAccount pushedItem){
+                                                     ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:99: error: cannot find symbol
+  private static SBAccount[] push(SBAccount array[], SBAccount pushedItem){
+                 ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:105: error: cannot find symbol
+  private static FDAccount[] push(FDAccount array[], FDAccount pushedItem){
+                                  ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:105: error: cannot find symbol
+  private static FDAccount[] push(FDAccount array[], FDAccount pushedItem){
+                                                     ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:105: error: cannot find symbol
+  private static FDAccount[] push(FDAccount array[], FDAccount pushedItem){
+                 ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:113: error: cannot find symbol
+  private static int search(SBAccount array[], int accnumber){
+                            ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:130: error: cannot find symbol
+  private static int search(FDAccount array[], int accnumber){
+                            ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:11: error: cannot find symbol
+  SBAccount savings[] = new SBAccount[0];        //create a dynamic array of objects
+                            ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:12: error: cannot find symbol
+  FDAccount deposits[] = new FDAccount[0];       //create a dynamic array of objects
+                             ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:26: error: cannot find symbol
+      SBAccount temp = new SBAccount(accnumber, balance);                  //devise a method to push the new object into the dynamic array of objects.
+      ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:26: error: cannot find symbol
+      SBAccount temp = new SBAccount(accnumber, balance);                  //devise a method to push the new object into the dynamic array of objects.
+                           ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:36: error: cannot find symbol
+      FDAccount temp = new FDAccount(accnumber, depositAmount, period);    //devise a method to push the new object into the dynamic array of objects.
+      ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:36: error: cannot find symbol
+      FDAccount temp = new FDAccount(accnumber, depositAmount, period);    //devise a method to push the new object into the dynamic array of objects.
+                           ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:86: error: cannot find symbol
+      for(SBAccount i : this.savings){
+          ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:92: error: cannot find symbol
+      for(FDAccount i : this.deposits){
+          ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:100: error: cannot find symbol
+    SBAccount[] longer = new SBAccount[array.length + 1];
+    ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:100: error: cannot find symbol
+    SBAccount[] longer = new SBAccount[array.length + 1];
+                             ^
+  symbol:   class SBAccount
+  location: class Customer
+./source_files/Customer.java:106: error: cannot find symbol
+    FDAccount[] longer = new FDAccount[array.length + 1];
+    ^
+  symbol:   class FDAccount
+  location: class Customer
+./source_files/Customer.java:106: error: cannot find symbol
+    FDAccount[] longer = new FDAccount[array.length + 1];
+                             ^
+  symbol:   class FDAccount
+  location: class Customer
+24 errors
+./source_files/BankDemo.java:2: error: package pkbanking.pkcustomer does not exist
+import pkbanking.pkcustomer.*;
+^
+./source_files/BankDemo.java:6: error: cannot find symbol
+		Customer c[] = new Customer[5];
+		^
+  symbol:   class Customer
+  location: class BankDemo
+./source_files/BankDemo.java:6: error: cannot find symbol
+		Customer c[] = new Customer[5];
+		                   ^
+  symbol:   class Customer
+  location: class BankDemo
+3 errors
+Error: Could not find or load main class BankDemo
+${machine}:02 ${user}$ exit
