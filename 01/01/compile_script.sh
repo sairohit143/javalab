@@ -1,5 +1,5 @@
 #!/bin/bash
-
+mkdir class_files
 #compilation of main source file from the ./source_files/ directory
 # and dumping the class files into ./class_files/ directory.
 javac ./source_files/BookDemo.java -d ./class_files/
