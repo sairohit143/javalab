@@ -2,7 +2,7 @@ package pkbanking.pkaccount.sb;
 
 import pkbanking.pkinterface.*;
 import pkbanking.pkaccount.*;
-import okbanking.pkexception.*;
+import pkbanking.pkexception.*;
 
 public class SBAccount extends Account implements Transaction, InterestRate{
   public SBAccount(int accnumber, double balance){
@@ -10,7 +10,7 @@ public class SBAccount extends Account implements Transaction, InterestRate{
   }
   public void deposit(double depositAmount){
     if(depositAmount < 0){
-			throw new IllegalArgumentException("ERROR SBAE-001: Unable to Process Deposit, Deposit Amount should be Positive !")
+			throw (new IllegalArgumentException("ERROR SBAE-001: Unable to Process Deposit, Deposit Amount should be Positive !"));
       //System.out.print("\nERROR SBAE-001: Unable to Process Deposit, Deposit Amount should be Positive !");
     }
     else{
