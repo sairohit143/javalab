@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir class_files
+
 #compilation of auxillary source files from the ./source_files subdirectory.
 javac ./source_files/Transaction.java -d ./class_files
 javac ./source_files/InterestRate.java -d ./class_files

@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir class_files
+
 javac ./source_files/ArrayList_String.java -d ./class_files
 
 cd ./class_files

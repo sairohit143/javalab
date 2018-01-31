@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir class_files
+
 #compilation of main source file from the ./source_files/ directory.
 javac ./source_files/twod.java -d ./class_files
 javac ./source_files/threed.java -d ./class_files
